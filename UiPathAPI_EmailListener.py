@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import time
 from itertools import chain
 import email
@@ -20,21 +14,16 @@ import json
 with open('Config.json') as f:
     dictC = json.load(f)
 
-
 # This method runs a POST call to Refresh Token and a second API call to add a new item in a Queue stored in UiPath Orchestrator(Cloud). 
 # It receives as input arguments the email sender and subject
 def apiOrchestrator(arg1, arg2):
         
        
     try:
-        # N.B -> For Orchestrator On-premises please see UiPath API Swagger
-            
+        # N.B -> For Orchestrator On-premises please see UiPath API Swagger  
         r = requests.post(url=dictC['URL_Auth'], json= dictC['bodyAuth'], headers=dictC['headersAuth'] )
-
         response = json.loads(r.content)
-
         print( "Bearer "+response["access_token"])
-
         headers2 = dictC['headersAddQI']
         headers2['Authorization'] = "Bearer "+response["access_token"]
 
@@ -44,17 +33,15 @@ def apiOrchestrator(arg1, arg2):
         specificContent['email@odata.type'] = '#String'
         specificContent['Email-Subject'] = arg2
         specificContent['Email-Subject@odata.type'] = '#String'
-
         data2 ={}
         data2['Name'] = dictC['queueName']
         data2['Priority'] = dictC['queuePriority']
         data2['SpecificContent'] = specificContent
-
         data3 = {}
         data3['itemData'] = data2
-
         r2 = requests.post(url=dictC['URL_AddQI'], data = json.dumps(data3), headers = headers2)
         print(r2.content)
+        
     except Exception as exception:
         print("Exception: {}".format(type(exception)))
         print("Exception message: {}".format(exception))
@@ -89,7 +76,6 @@ while 1:
                     print(msg["Date"])
                     print(msg["From"])
                     print(msg["Subject"])
-
                     start = str(msg['From']).find('<') + 1
                     end = str(msg['From']).find('>', start)
                     emailSender = (str(msg['From'][start:end]))
@@ -103,6 +89,7 @@ while 1:
         
         # Set-up the sleeping time for optimal trade-off
         time.sleep(1)
+        
     except Exception as exception:
         print("Exception: {}".format(type(exception)))
         print("Exception message: {}".format(exception))
