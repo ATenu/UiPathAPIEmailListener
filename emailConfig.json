@@ -1,0 +1,30 @@
+{
+	"bodyAuth" : {
+		"grant_type" : "refresh_token",
+        "client_id" : "8DEv1AMNXczW3y4U15LL3jYf62jK93n5",
+        "refresh_token" : "4irUV5UhSC1XKqJg2db0Efn0IOrvOEq_GWHIOK9bT5CNc"
+	},
+	"headersAuth" : {
+	    "Content-Type" : "application/json",
+        "X-UIPATH-TenantName" : "DefaultTenant"
+	},
+	"URL_Auth" : "https://account.uipath.com/oauth/token",
+	"headersAddQI" : {
+	    "Content-Type" : "application/json",
+        "X-UIPATH-TenantName" : "DefaultTenant",
+		"X-UIPATH-OrganizationUnitId" : "1258226"
+	},
+	"queueName" : "EmailListener",
+	"queuePriority" : "Normal",
+	"URL_AddQI" : "https://platform.uipath.com/avanaudnniya/DefaultTenant/orchestrator_/odata/Queues/UiPathODataSvc.AddQueueItem",
+	"EmailCredentials" : {
+		"imap_Host" : "imap.gmail.com",
+		"imap_Port" : "993",
+		"username" : "baudopippo464@gmail.com",
+		"password" : "maravenier"
+	},
+	"EmailSelection" : {
+		"filter" : "reset",
+		"folderName" : "Inbox"
+	}
+}
