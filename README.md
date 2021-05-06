@@ -8,8 +8,8 @@ How to use it:
 4) Run the script.
 
 Orchestrator API calls used:
-1) Authentication (POST) to request the "token"
-2) Add Queue Item in a specific Queue
+1) Authentication to request the "token" (POST)
+2) Add Queue Item in a specific Queue (POST)
 
 Info needed includes:
 1) Client-ID
