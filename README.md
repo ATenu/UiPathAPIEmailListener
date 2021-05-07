@@ -11,7 +11,7 @@ Orchestrator API calls used:
 1) Authentication to request the "token" (POST)
 2) Add Queue Item in a specific Queue (POST)
 
-Info needed includes:
+Info needed also include:
 1) Client-ID
 2) API Key (Refresh token)
 3) OrganizationUnitID
