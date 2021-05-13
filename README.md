@@ -19,4 +19,4 @@ Info needed also include:
 5) Logical Name
 6) Queue Name
 
-For more details on how to obtain all the data needed please refers to UiPath Documentantion and UiPath Swagger.
+For more details on how to obtain all the data needed refers to UiPath Documentantion and UiPath Swagger.
